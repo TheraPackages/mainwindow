@@ -1,0 +1,29 @@
+{
+  "name": "mainwindow",
+  "main": "./lib/main",
+  "version": "0.0.6",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/atom/mainwindow",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "event-kit": "latest",
+    "fs-promise": "~1.0.0",
+    "jquery": "2.1.4",
+    "logat": "~1.0.6",
+    "q": "~1.0.1",
+    "space-pen": "~5.1.2"
+  },
+  "devDependencies": {
+    "standard": "~8.5.0"
+  },
+  "standard": {
+    "globals": [
+      "atom"
+    ]
+  }
+}

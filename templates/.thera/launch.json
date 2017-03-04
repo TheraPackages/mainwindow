@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "main": "${workspaceRoot}/main.we",
+  "mock": [
+    {
+      "path": "data.data.cmAboveResult.modules",
+      "api": "mtop.tmall.search.searchproduct",
+      "file": "${workspaceRoot}/mock.json"
+    }
+  ]
+}
