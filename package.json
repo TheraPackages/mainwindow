@@ -25,5 +25,21 @@
     "globals": [
       "atom"
     ]
+  },
+  "consumedServices": {
+    "project-template-protocol": {
+      "description": "",
+      "versions": {
+        "1.0.0": "consumeProjectTemplate"
+      }
+    }
+  },
+  "providedServices": {
+    "project-template-protocol": {
+      "description": "provide a project template",
+      "versions": {
+        "1.0.0": "provideProjectTemplate"
+      }
+    }
   }
 }

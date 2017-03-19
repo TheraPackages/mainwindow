@@ -1,6 +1,9 @@
 {
   "version": "0.1.0",
   "main": "${workspaceRoot}/main.we",
+  "launch":"",
+  "type": "weex",
+  "transformResult":"${workspaceRoot}",
   "mock": [
     {
       "path": "data.data.cmAboveResult.modules",
