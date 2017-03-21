@@ -2,11 +2,12 @@
 $ = window.$ = window.jQuery = require 'jquery'
 require './jquery-ui.js'
 project = require './project.js'
+path = require 'path'
 
 module.exports =
 class RightView extends View
   @content: ->
-
+    pathstr = path.join(atom.packages.resolvePackagePath('mainwindow'), 'images')
 
     $ ->
 
@@ -78,43 +79,97 @@ class RightView extends View
             return
       return
 
+    $(document).ready ->
+      $('#previewleftofmain').mousemove (e) ->
+        elementWidth = 1
+        mousePercent = (e.pageX - (@offsetLeft)) / elementWidth
+        bgPosition = 0 - (Math.floor(mousePercent * 0.1 / elementWidth) * elementWidth)
+        $(this).css 'background-position', bgPosition + 'px 0px'
+        return
+      return
+
+
+    $ ->
+      $('#luaViewCreateTab').mouseover ->
+        $('#mainrightguideimg').attr('src',pathstr + "/luaviewguide.png")
+        $('#gotoGitBut').click ->
+          require('electron').shell.openExternal('https://github.com/alibaba/LuaViewSDK')
+          return
+        return
+
+      $('#weeXcreateProject').mouseover ->
+        #require('electron').shell.openExternal('https://github.com')
+        $('#mainrightguideimg').attr('src',pathstr + "/weexguide.png")
+        $('#gotoGitBut').click ->
+          require('electron').shell.openExternal('https://github.com/alibaba/weex')
+          return
+        return
+
+      $('#existingProject').mouseover ->
+        #require('electron').shell.openExternal('https://github.com')
+
+        console.log pathstr + "/reopenProject.png"
+        $('#mainrightguideimg').attr('src',pathstr + "/reopenProject.png")
+
+        return
+
+      return
+
 
 
     @div id:"mainwindow-head-side", class:'wrapper-side' ,=>
-      @span class:'logo-div'
-      @span 'Thera', class: 'title-div'
-      @span "#{atom.getTheraVersion()}",class:'version-div'
 
-      @div class:'expentios-div',=>
-        @span class: 'fa fa-rocket fa-2x expentios-icon-new1'
-        @span 'Start a new Thera project for Weex',class:'expentios-sub-span',outlet: 'createProject',click: 'createProjectFuction'
-
-      @div class:'expentios-div',=>
-        @span class: 'fa fa-folder-open fa-2x expentios-icon-new2'
-        @span 'Open an existing Thera project',class:'expentios-sub-span',click: 'openExistProject'
-
-      @div class:'expentios-div',=>
-        @span class: 'fa fa-github-alt fa-2x expentios-icon-new3'
-        @span 'Check out project from Version Control',class:'expentios-sub-span'
-
-      @div class:'expentios-div',=>
-        @span class: 'fa fa-diamond fa-2x expentios-icon-new4'
-        @span 'Import project from Falcon-sketch',class:'expentios-sub-span'
-
-      @div class:'main-foot-div' ,=>
-        @span class: 'fa fa-cog main-foot-icon'
-        @span 'Setting'
-        @span class: 'fa fa-exclamation-circle main-foot-icon'
-        @span 'Get Help'
+      @div id:"mainwindow-left" ,=>
+        @span class:'logo-div'
+        @span 'Thera', class: 'title-div'
+        @span "#{atom.getTheraVersion()}",class:'version-div'
 
 
+        @hr class:'style-eight'
+        @div class:'expentios-div',=>
+          @span class: 'fa fa-rocket fa-2x expentios-icon-new1'
+          @span 'Start a new Thera project for Weex',class:'expentios-sub-span',outlet: 'createProject',click: 'createProjectFuction',id:"weeXcreateProject"
+
+        @div class:'expentios-div',=>
+          @span id:"mainviewluaviewicon", class: 'lua-icon expentios-icon-lua'
+          @span 'Start a new Thera project for LuaView',class:'expentios-sub-span',id: 'luaViewCreateTab',click: 'createProjectFuction'
+
+        @div class:'expentios-div',=>
+          @span class: 'fa fa-folder-open fa-2x expentios-icon-new2'
+          @span 'Open an existing Thera project',class:'expentios-sub-span',id: 'existingProject',click: 'openExistProject'
+
+        @hr class:'style-eight2'
+
+        @div class:'expentios-div',=>
+          @span class: 'fa fa-github-alt fa-2x expentios-icon-new3'
+          @span 'Check out project from Version Control',class:'expentios-sub-span'
+
+        @div class:'expentios-div',=>
+          @span class: 'fa fa-diamond fa-2x expentios-icon-new4'
+          @span 'Import project from Falcon-sketch',class:'expentios-sub-span'
+
+        @div class:'main-foot-div' ,=>
+          @span class: 'fa fa-cog main-foot-icon'
+          @span 'Setting'
+          @span class: 'fa fa-exclamation-circle main-foot-icon'
+          @span 'Get Help'
+
+
+      @div id:"mainwindow-right" ,=>
+
+        @img id:"mainrightguideimg" ,class:"main-right-guide-img", src:pathstr + "/updateNode.png"
+        @span ' get more',id:"gotoGitBut", class:"spanGetMoreMain fa fa-github fa-2x",click:"gotoGit"
+        @div id:"previewleftofmain",style:""
+
+  gotoGit: ->
+    require('electron').shell.openExternal('https://github.com/alibaba/Thera')
 
   createProjectFuction: ->
     $ ->
       $('#dialog-confirm').dialog 'open'
 
   openExistProject: ->
-    console.log 'openExistProject'
+
     atom.pickFolder (path) ->
       if (Array.isArray(path))
         document.body.children[0].style.display = ''
