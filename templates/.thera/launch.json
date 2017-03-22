@@ -1,12 +1,12 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "${workspaceRoot}/main.we",
   "launch": {
     "appid": "com.taobao.Preview",
     "path": "${attachPackage}/Preview.app"
   },
   "type": "weex",
-  "transformResult":"${workspaceRoot}",
+  "transformPath":"${workspaceRoot}/out",
   "mock": [
     {
       "path": "data.data.cmAboveResult.modules",
