@@ -159,7 +159,11 @@ class RightView extends View
 
         @img id:"mainrightguideimg" ,class:"main-right-guide-img", src:pathstr + "/updateNode.png"
         @span ' get more',id:"gotoGitBut", class:"spanGetMoreMain fa fa-github fa-2x",click:"gotoGit"
-        @div id:"previewleftofmain",style:""
+        @div id:"previewleftofmain"
+        
+  $ ->
+        $("#previewleftofmain").css("height", require('electron').screen.getPrimaryDisplay().size.height)
+        $("#previewleftofmain").css("width", require('electron').screen.getPrimaryDisplay().size.width)
 
   gotoGit: ->
     require('electron').shell.openExternal('https://github.com/alibaba/Thera')
