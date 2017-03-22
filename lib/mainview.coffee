@@ -128,11 +128,11 @@ class RightView extends View
         @hr class:'style-eight'
         @div class:'expentios-div',=>
           @span class: 'fa fa-rocket fa-2x expentios-icon-new1'
-          @span 'Start a new Thera project for Weex',class:'expentios-sub-span',outlet: 'createProject',click: 'createProjectFuction',id:"weeXcreateProject"
+          @span 'Start a new Thera project for Weex',class:'expentios-sub-span',outlet: 'createProject',click: 'createWeexProject',id:"weeXcreateProject"
 
         @div class:'expentios-div',=>
           @span id:"mainviewluaviewicon", class: 'lua-icon expentios-icon-lua'
-          @span 'Start a new Thera project for LuaView',class:'expentios-sub-span',id: 'luaViewCreateTab',click: 'createProjectFuction'
+          @span 'Start a new Thera project for LuaView',class:'expentios-sub-span',id: 'luaViewCreateTab',click: 'createLuaProject'
 
         @div class:'expentios-div',=>
           @span class: 'fa fa-folder-open fa-2x expentios-icon-new2'
@@ -164,9 +164,13 @@ class RightView extends View
   gotoGit: ->
     require('electron').shell.openExternal('https://github.com/alibaba/Thera')
 
-  createProjectFuction: ->
+  createWeexProject: ->
     $ ->
-      $('#dialog-confirm').dialog 'open'
+      $('#dialog-confirm').attr('language', 'weex').dialog 'open'
+
+  createLuaProject: ->
+    $ ->
+      $('#dialog-confirm').attr('language', 'luaview').dialog 'open'
 
   openExistProject: ->
 
