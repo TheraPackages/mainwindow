@@ -2,7 +2,7 @@
   "version": "0.1.1",
   "main": "${workspaceRoot}/main.we",
   "launch": {
-    "appid": "com.taobao.Preview",
+    "appid": "com.taobao.preview",
     "path": "${attachPackage}/Preview.app"
   },
   "type": "weex",
