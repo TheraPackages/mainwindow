@@ -1,9 +1,11 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "${workspaceRoot}/main.we",
   "launch": {
     "appid": "com.taobao.preview",
-    "path": "${attachPackage}/Preview.app"
+    "path": "${attachPackage}/weex-run/Preview.app",
+    "pathAndroid": "${attachPackage}/weex-run/Preview.apk",
+    "appidAndroid": "com.alibaba.falcon/com.alibaba.falcon.activity.MainActivity"
   },
   "type": "weex",
   "transformPath":"${workspaceRoot}/out",
