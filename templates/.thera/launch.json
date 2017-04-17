@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "${workspaceRoot}/main.we",
   "launch": {
     "appid": "com.taobao.preview",
@@ -8,6 +8,7 @@
     "appidAndroid": "com.alibaba.falcon/com.alibaba.falcon.activity.MainActivity"
   },
   "type": "weex",
+  "notifyOnSync": true,
   "transformPath":"${workspaceRoot}/out",
   "mock": [
     {
