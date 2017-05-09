@@ -9,7 +9,7 @@
   },
   "type": "weex",
   "notifyOnSync": true,
-  "transformPath":"${workspaceRoot}/out",
+  "transformPath":"${workspaceRoot}/.output",
   "mock": [
     {
       "path": "data.data.cmAboveResult.modules",
