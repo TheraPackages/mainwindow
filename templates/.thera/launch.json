@@ -1,6 +1,6 @@
 {
   "version": "0.1.3",
-  "main": "${workspaceRoot}/main.we",
+  "main": "${workspaceRoot}/main.vue",
   "launch": {
     "appid": "com.taobao.preview",
     "path": "${attachPackage}/weex-run/resources/Preview.app",
@@ -8,7 +8,7 @@
     "appidAndroid": "com.alibaba.falcon/com.alibaba.falcon.activity.MainActivity"
   },
   "type": "weex",
-  "notifyOnSync": true,
+  "notifyOnSync": false,
   "transformPath":"${workspaceRoot}/.output",
   "mock": [
     {
