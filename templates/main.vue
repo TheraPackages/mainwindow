@@ -1,7 +1,7 @@
 <template>
   <div style="{backgroundColor: transparent, height: 276 }">
     <div class='item-container' @click="detailClick">
-      <img class="item-pic" :src="pic" />
+      <image class="item-pic" :src="pic" />
       <div class="item-info">
         <div>
           <text class="title">{{title}}</text>
