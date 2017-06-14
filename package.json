@@ -1,7 +1,7 @@
 {
   "name": "mainwindow",
   "main": "./lib/main",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A short description of your package",
   "keywords": [],
   "repository": "https://github.com/atom/mainwindow",
