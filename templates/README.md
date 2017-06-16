@@ -1,9 +1,16 @@
 
-## 
+## Template-project
 
+This is a simple project for startup. For simplicity, we present a single file project accompany with several configuration files.
 
-## 在这里补充文档说明
+```
+.
+├── .thera
+│   └── launch.json   # project configuration
+├── main.vue          # project entry
+├── mock.json         # mock conent
+├── package.json      # project dependencies
+└── README.md         # project DOC
+```
 
-## 测试
-
-可以通过mock.json描述mock数据, 做单元测试
+For a more complete demonstration, please refer to [weex-demo-project](https://github.com/TheraPackages/weex-demo-project).
