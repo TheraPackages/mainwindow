@@ -1,6 +1,6 @@
 <template>
   <div style="{backgroundColor: transparent, height: 276 }">
-    <div class='item-container' @click="detailClick">
+    <div class="item-container" @click="detailClick">
       <image class="item-pic" :src="pic" />
       <div class="item-info">
         <div>
@@ -115,20 +115,20 @@
                 try {
                     var args = {};
                     userTrack.commitut("click", 2101, "Page_SearchResult", "CtrlName", null, null, null, args);
-                } catch (e) {
-                    console.error("commitUtExpose exception: ", e);
+                } catch (err) {
+                    console.error("commitUtExpose exception: ", err);
                 }
             }
             var navigator = weex.requireModule('event');
             navigator.openURL("tmall://page.tm/itemDetail?itemId=" + this.itemId);
           },
-          buyClick: function(e) {
+          buyClick: function(evt) {
               if (userTrack) {
                   try {
                     var args = {};
                     userTrack.commitut("click", 2101, "Page_SearchResult", "CtrlName", null, null, null, args);
-                  } catch (e) {
-                      console.error("commitUtExpose exception: ", e);
+                  } catch (err) {
+                      console.error("commitUtExpose exception: ", err);
                   }
               }
               var modal = weex.requireModule('modal');

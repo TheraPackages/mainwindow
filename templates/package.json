@@ -1,0 +1,14 @@
+{
+  "name": "${project-name}",
+  "version": "1.0.0",
+  "description": "thera weex demo",
+  "main": "./main.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "demo-tool": "^1.0.0"
+  },
+  "author": "thera",
+  "license": "ISC"
+}

@@ -9,7 +9,20 @@
   },
   "type": "weex",
   "notifyOnSync": false,
-  "transformPath":"${workspaceRoot}/.output",
+  "transformPath":"${workspaceRoot}/build",
+  "build": {
+    "apply": "debug",
+    "types": {
+      "debug": {
+        "minify": false,
+        "web": false
+      },
+      "release": {
+        "minify": true,
+        "web": false
+      }
+    }
+  },
   "mock": [
     {
       "path": "data.data.cmAboveResult.modules",
