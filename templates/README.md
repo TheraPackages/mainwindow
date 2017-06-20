@@ -7,8 +7,11 @@ This is a simple project for startup. For simplicity, we present a single file p
 .
 ├── .thera
 │   └── launch.json   # project configuration
+├── mock
+│   └── config.json   # mock configuration
+│   └── mock_file_1.json   # mock data files
+│   └── mock_file_2.json
 ├── main.vue          # project entry
-├── mock.json         # mock content
 ├── package.json      # project dependencies
 └── README.md         # project DOC
 ```
