@@ -1,0 +1,9 @@
+{
+    "api": "api.com.thera.test",
+    "data": {
+    },
+    "ret": [
+        "SUCCESS::调用成功"
+    ],
+    "v": "1.0"
+}

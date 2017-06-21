@@ -1,8 +1,8 @@
 {
   "mockData": [
     {
-      "api": "mtop.tmall.search.searchproduct",
-      "file": "${workspaceRoot}/mock/mock_search.json"
+      "api": "api.com.thera.test",
+      "file": "${workspaceRoot}/mock/mock_test_1.json"
     }
   ],
   "mockModules":
