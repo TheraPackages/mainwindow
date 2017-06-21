@@ -90,26 +90,31 @@ class RightView extends View
 
 
     $ ->
+      getMoreUrl = 'https://github.com/alibaba/Thera'
+
+      $('#gotoGitBut').click ->
+        require('electron').shell.openExternal(getMoreUrl)
+
       $('#luaViewCreateTab').mouseover ->
         $('#mainrightguideimg').attr('src',pathstr + "/luaviewguide.png")
-        $('#gotoGitBut').click ->
-          require('electron').shell.openExternal('https://github.com/alibaba/LuaViewSDK')
-          return
+        getMoreUrl = 'https://github.com/alibaba/LuaViewSDK'
         return
 
       $('#weeXcreateProject').mouseover ->
-        #require('electron').shell.openExternal('https://github.com')
         $('#mainrightguideimg').attr('src',pathstr + "/weexguide.png")
-        $('#gotoGitBut').click ->
-          require('electron').shell.openExternal('https://github.com/alibaba/weex')
-          return
+        getMoreUrl = 'https://github.com/alibaba/weex'
+        return
+
+      $('#virtualViewCreateTab').mouseover ->
+        $('#mainrightguideimg').attr('src',pathstr + "/virtualviewguide.png")
+        getMoreUrl = 'http://tangram.pingguohe.net/'
         return
 
       $('#existingProject').mouseover ->
-        #require('electron').shell.openExternal('https://github.com')
 
         console.log pathstr + "/reopenProject.png"
         $('#mainrightguideimg').attr('src',pathstr + "/reopenProject.png")
+        getMoreUrl = 'https://github.com/alibaba/Thera'
 
         return
 
@@ -163,15 +168,12 @@ class RightView extends View
       @div id:"mainwindow-right" ,=>
 
         @img id:"mainrightguideimg" ,class:"main-right-guide-img", src:pathstr + "/updateNode.png"
-        @span ' get more',id:"gotoGitBut", class:"spanGetMoreMain fa fa-github fa-2x",click:"gotoGit"
+        @span ' get more',id:"gotoGitBut", class:"spanGetMoreMain fa fa-github fa-2x"
         @div id:"previewleftofmain"
 
   $ ->
         $("#previewleftofmain").css("height", require('electron').screen.getPrimaryDisplay().size.height)
         $("#previewleftofmain").css("width", require('electron').screen.getPrimaryDisplay().size.width)
-
-  gotoGit: ->
-    require('electron').shell.openExternal('https://github.com/alibaba/Thera')
 
   createWeexProject: ->
     $ ->
