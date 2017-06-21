@@ -134,6 +134,11 @@ class RightView extends View
           @span id:"mainviewluaviewicon", class: 'lua-icon expentios-icon-lua'
           @span 'Start a new Thera project for LuaView',class:'expentios-sub-span',id: 'luaViewCreateTab',click: 'createLuaProject'
 
+        if atom.packages.resolvePackagePath('virtualview-plugin')
+          @div class:'expentios-div',=>
+            @span class: 'fa fa-2x fa-space-shuttle expentios-icon-new1'
+            @span 'Start a new Thera project for VirtualView',class:'expentios-sub-span',id: 'virtualViewCreateTab',click: 'createVirtualViewProject'
+
         @div class:'expentios-div',=>
           @span class: 'fa fa-folder-open fa-2x expentios-icon-new2'
           @span 'Open an existing Thera project',class:'expentios-sub-span',id: 'existingProject',click: 'openExistProject'
@@ -160,7 +165,7 @@ class RightView extends View
         @img id:"mainrightguideimg" ,class:"main-right-guide-img", src:pathstr + "/updateNode.png"
         @span ' get more',id:"gotoGitBut", class:"spanGetMoreMain fa fa-github fa-2x",click:"gotoGit"
         @div id:"previewleftofmain"
-        
+
   $ ->
         $("#previewleftofmain").css("height", require('electron').screen.getPrimaryDisplay().size.height)
         $("#previewleftofmain").css("width", require('electron').screen.getPrimaryDisplay().size.width)
@@ -175,6 +180,10 @@ class RightView extends View
   createLuaProject: ->
     $ ->
       $('#dialog-confirm').attr('language', 'luaview').dialog 'open'
+
+  createVirtualViewProject: ->
+    $ ->
+      $('#dialog-confirm').attr('language', 'virtualview').dialog 'open'
 
   openExistProject: ->
 
