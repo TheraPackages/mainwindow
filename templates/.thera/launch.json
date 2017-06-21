@@ -22,12 +22,5 @@
         "web": false
       }
     }
-  },
-  "mock": [
-    {
-      "path": "data.data.cmAboveResult.modules",
-      "api": "mtop.tmall.search.searchproduct",
-      "file": "${workspaceRoot}/mock.json"
-    }
-  ]
+  }
 }
