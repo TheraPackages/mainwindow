@@ -216,6 +216,10 @@ module.exports =
     @mySelectListView.hide() if @mySelectListView
     @rightView.remove() if @rightView
 
+  hidden: ->
+    $("#mainwindow-head-content").css("display", "none")
+    $("#mainwindow-head-footer").css("display", "none")
+
   toggle: ->
     if @mySelectListView.isVisible()
       @mySelectListView.hide()
