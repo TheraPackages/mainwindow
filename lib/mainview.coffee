@@ -3,7 +3,6 @@ $ = window.$ = window.jQuery = require 'jquery'
 require './jquery-ui.js'
 project = require './project.js'
 path = require 'path'
-mainwindow = require './mainwindow'
 
 module.exports =
 class RightView extends View
@@ -195,6 +194,7 @@ class RightView extends View
     atom.pickFolder (path) ->
       if (Array.isArray(path))
         document.body.children[0].style.display = ''
-        mainwindow.hidden()
+        $("#mainwindow-head-content").css("display", "none")
+        $("#mainwindow-head-footer").css("display", "none")
         atom.project.addPath(path[0])
         atom.commands.dispatch(atom.commands.rootNode, 'tree-view:show')
